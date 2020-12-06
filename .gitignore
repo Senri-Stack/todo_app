@@ -6,4 +6,4 @@ myvenv
 db.sqlite3
 /static
 .DS_Store
-local_setting.py
+local_settings.py

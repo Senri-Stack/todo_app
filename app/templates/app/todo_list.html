@@ -1,34 +1,33 @@
 {% extends './_base.html' %}
 {% block content %}
-    <h2>タスク一覧</h2>
-    <table>
-        <thead>
-        <tr>
-        <th scope="col">タスク名</th>
-        <th>チェック</th>
-        <th scope="col">開始日</th>
-        <th scope="col">開始時間</th>
-        <th scope="col">終了日</th>
-        <th scope="col">終了時間</th>
-        <th scope="col">操作</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for item in object_list %}
-            <tr>
-            <td scope="row"><a href="{% url 'todo:detail' pk=item.id %}">{{ item.task }}</a></td>
-            <td>{{ item.completed|yesno:"完了,未完了" }}</td>
-            <td>{{ item.start_day }}</td>
-            <td>{{ item.start_time }}</td>
-            <td>{{ item.end_day }}</td>
-            <td>{{ item.end_time }}</td>
-            <td>
-            <a href="{% url 'todo:update' pk=item.id %}">修正</a>
-            <a href="{% url 'todo:delete' pk=item.id %}">削除</a>
-            </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-    <a href="{% url 'todo:create' %}">+</a>
+    <div class="container">
+        <h2 class="page_title">タスク一覧</h2>
+        <div class="row">
+            <div class="col_title">
+                <p>タスク名</p>
+                <p>開始日</p>
+                <p>開始時間</p>
+                <p>終了日</p>
+                <p>終了時間</p>
+                <p>チェック</p>
+            </div>
+        </div>
+    
+        <div class="row">
+            {% for item in object_list %}
+                <div class="col">
+                    <p><a href="{% url 'todo:detail' pk=item.id %}">{{ item.task }}</a></p>
+                    <p>{{ item.start_day }}</p>
+                    <p>{{ item.start_time }}</p>
+                    <p>{{ item.end_day }}</p>
+                    <p>{{ item.end_time }}</p>
+                    <p>{{ item.completed|yesno:"完了,未完了" }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    
+        <div class="row">
+            <button class="button"><a class="button" href="{% url 'todo:create' %}">+</a></button>
+        </div>
+    </div>
 {%endblock%}

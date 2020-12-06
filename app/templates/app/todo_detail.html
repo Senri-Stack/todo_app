@@ -1,22 +1,28 @@
 {% extends './_base.html' %}
 
 {% block content %}
-    <h2>ToDoの詳細</h2>
-    <h3>タスク</h3>
-    <p>{{ object.task }}</p>
+    <div class="container">
+        <div class="row">
+            <h2 class="page_title">ToDoの詳細</h2>
+        </div>
 
-    <h3>備考</h3>
-    <p>{{ object.memo|linebreaks  }}</p>
-
-    <h3>開始日</h3>
-    <p>{{ object.start_day }} {{ object.start_time }}</p>
-
-    <h3>終了日</h3>
-    <p>{{ object.end_day }} {{ object.end_time }}</p>
-
-
-    <h3>チェック</h3>
-    <p>{{ object.completed|yesno:"完了,未完了" }}</p>
-
-    <a href="{% url 'todo:list' %}">戻る</a>
+        <div class="row">
+            <h3>タスク</h3>
+            <p>{{ object.task }}</p>
+            <h3>備考</h3>
+            <p>{{ object.memo|linebreaks  }}</p>
+            <h3>開始日</h3>
+            <p>{{ object.start_day }} {{ object.start_time }}</p>
+            <h3>終了日</h3>
+            <p>{{ object.end_day }} {{ object.end_time }}</p>
+            <h3>チェック</h3>
+            <p>{{ object.completed|yesno:"完了,未完了" }}</p>
+        </div>
+        
+        <div class="row">
+            <a href="{% url 'todo:list' %}" class="button">戻る</a>
+            <a href="{% url 'todo:delete' pk=object.id %}" class="button">削除</a>
+            <a href="{% url 'todo:update' pk=object.id %}" class="button">修正</a>
+        </div>
+    </div>
 {%endblock%}

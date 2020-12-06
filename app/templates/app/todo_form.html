@@ -3,16 +3,17 @@
 {% block content %}
 
     {% if object %}
-        <h1>ToDoの編集</h1>
+        <h2 class="page_title">ToDoの編集</h2>
     {% else %}
-        <h1>ToDoの作成</h1>
+        <h2 class="page_title">ToDoの作成</h2>
     {% endif %}
 
-    <form method="post">
+    <form action="" method="POST">
+        <table>
+            {{ form.as_table }}
+        </table>
         {% csrf_token %}
-        <table>{{ form }}</table>
-        <button type="submit">送信</button>
+        <button class="button"><a class="button" href="{% url 'todo:list' %}">戻る</a></button>
+        <button class="button" type="submit">送信</button>
     </form>
-
-    <a href="{% url 'todo:list' %}">戻る</a>
 {%endblock%}

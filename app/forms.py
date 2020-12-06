@@ -6,7 +6,7 @@ class TodoForm(forms.ModelForm):
 
     class Meta:
         model = Todo
-        fields = ['task', 'category', 'memo', 'completed', 'start_day', 'end_day', 'start_time','end_time']
+        fields = ['task', 'category', 'memo', 'start_day', 'end_day', 'start_time','end_time', 'completed']
         widgets = {
                     'task': forms.TextInput(),
                     'memo': forms.Textarea(attrs={'rows':4}),

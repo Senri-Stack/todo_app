@@ -1,0 +1,103 @@
+body{
+    margin:0;
+    font-family: "Yu Gothic";
+}
+
+p{
+    margin-top: 0;
+    color:#212121;
+}
+
+a{
+    text-decoration: none;
+    color:#235180;
+    font-weight: bold;
+}
+
+.button{
+    font-family: "Yu Gothic";
+    border: none;
+    background-color:#235180;
+    color: #eeeeee;
+    padding: 8px;
+    text-decoration: none;
+    margin-top: 8px;
+    font-weight: normal;
+}
+
+h3{
+    color:#235180;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.container{
+    width: 80%;
+    margin:0;
+    margin-left: 16px;
+}
+
+.row{
+    display: block;
+    margin-bottom: 24px;
+}
+
+.col_title{
+    display: flex;
+    width: 100%;
+    margin-bottom: 0;
+    padding-top: 8px;
+    padding-left: 4px;
+    padding-bottom: 0;
+    background-color:#235180;
+}
+
+.col_title > p{
+    color: #eeeeee;
+}
+
+.col{
+    padding: 0;
+    width: 100%;
+    display: flex;
+    margin-bottom: 8px;
+    border-bottom: 1px #B6B6B6 dotted;
+}
+
+.col > p , .col_title > p{
+    flex-shrink: 0;
+    flex-basis: 17%;
+}
+
+.col > p {
+    margin-left: 4px;
+}
+
+.navbar{
+    display: flex;
+    background-color: #FF9800;
+    color: #212121;
+}
+
+
+.field{
+    width: 80%;
+    margin-bottom: 16px;
+}
+
+.app_title{
+    padding: 0;
+    margin: 0;
+    margin-top: 16x;
+    margin-bottom:16px;
+    margin-left: 16px;
+    background-color: #FF9800;
+    color: white;
+}
+
+.page_title{
+    color: #235180;
+    margin-bottom: 0;
+    margin-top: 16x;
+    margin-bottom:32px;
+}

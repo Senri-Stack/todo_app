@@ -4,10 +4,12 @@
     <head>
         <title>Todo</title>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
     </head>
     <body>
         <div class="navbar">
-            <a href="{% url 'admin:index' %}">管理画面へ</a>
+            <h1><a href="{% url 'todo:list' %}"  class="app_title">タスク管理</a></h1>
+            <!-- <a href="{% url 'admin:index' %}" class="admin">管理画面へ</a> -->
         </div>
         {% block content %}
         {% endblock %}
